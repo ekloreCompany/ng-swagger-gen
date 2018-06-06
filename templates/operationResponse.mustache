@@ -27,7 +27,8 @@
       map(_r => {
         let _resp = _r as HttpResponse<any>;
         let _body: {{{operationResultType}}} = null;
-        {{#operationIsString}}_body = _resp.body as string;{{/operationIsString
+        {{#operationIsUnknown}}_body = _resp.body{{/operationIsUnknown
+        }}{{#operationIsString}}_body = _resp.body as string;{{/operationIsString
         }}{{#operationIsNumber}}_body = parseFloat(_resp.body as string);{{/operationIsNumber
         }}{{#operationIsBoolean}}_body = _resp.body == 'true';{{/operationIsBoolean
         }}{{#operationIsEnum}}_body = _resp.body as {{{operationResultType}}};{{/operationIsEnum
