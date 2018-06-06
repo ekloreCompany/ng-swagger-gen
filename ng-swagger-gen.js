@@ -865,8 +865,8 @@ function processServices(swagger, models, options) {
       if (descriptor == null) {
         descriptor = {
           serviceName: tag,
-          serviceClass: tag + 'Service',
-          serviceFile: toFileName(tag) + '.service',
+          serviceClass: tag + 'ProxyService',
+          serviceFile: toFileName(tag) + '-proxy.service',
           operationIds: new Set(),
           serviceOperations: [],
         };
